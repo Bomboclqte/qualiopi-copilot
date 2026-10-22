@@ -14,7 +14,7 @@ Vous dirigez un organisme de formation, un centre de bilans de compétences, un 
 
 ## Installation
 
-Il vous faut [Claude Code](https://claude.com/claude-code) (version 2.1.275 ou plus récente) et Python 3.
+Il vous faut [Claude Code](https://claude.com/claude-code) (version 2.1.275 ou plus récente) et Python 3 (déjà présent sur Mac et Linux ; sous Windows, installez-le depuis [python.org](https://www.python.org/downloads/)).
 
 Dans Claude Code, tapez :
 
@@ -36,7 +36,12 @@ Claude vous demande ce qu'il ne peut pas deviner :
 - vos catégories d'actions ;
 - si vous préparez à une certification RNCP/RS ;
 - si vous faites de l'alternance ou de la sous-traitance ;
-- la date de votre prochain audit.
+- la date de votre prochain audit ;
+- si vous êtes un nouvel entrant (première année d'activité).
+
+Il lit les PDF, images, Word, Excel et PowerPoint. Au-delà de 200 fichiers, il vous demande d'abord quels sous-dossiers analyser.
+
+**Coût indicatif** (mesuré sur l'organisme d'exemple, 6 documents) : environ 0,80 $ de consommation Claude pour la matrice seule, et environ 2,70 $ pour l'audit blanc complet. Le coût augmente avec le nombre de documents.
 
 Il dépose ensuite trois fichiers dans votre dossier :
 
@@ -83,9 +88,9 @@ Le référentiel est dans `skills/qualiopi-cartographie/referentiel.json`. L'app
 ## Pour les contributeurs
 
 ```bash
-cd skills/qualiopi-cartographie/scripts && python3 -m unittest test_matrice   # tests du calcul
+cd skills/qualiopi-cartographie/scripts && python3 -m unittest test_matrice   # tests du calcul et de l'extraction
 claude plugin validate .                                                        # manifeste
-claude plugin eval .                                                            # évaluations (consomme des tokens)
+claude plugin eval . --scaffold --allow-tools Write "Bash(python3:*)" "Bash(/usr/bin/python3:*)"   # évaluations (~1 $, consomme des tokens)
 ```
 
 Les signalements d'erreur dans le référentiel sont les contributions les plus précieuses. Citez le texte officiel.

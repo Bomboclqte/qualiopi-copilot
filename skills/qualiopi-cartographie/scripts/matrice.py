@@ -2,15 +2,17 @@
 
 Usage :
   python matrice.py --cartographie cartographie.json --categories AF,CFA \
-      --date-audit 2027-03-15 [--certification] [--alternance] [--sous-traitance] [--nouvel-entrant]
+      --date-audit 2027-03-15 [--certification] [--alternance] [--sous-traitance] [--nouvel-entrant] \
+      [--sortie matrice-preuves.md]
 
 cartographie.json : {"<num indicateur>": [{"fichier": "...", "pourquoi": "...", "force": "forte|faible"}]}
-Écrit la matrice en Markdown sur la sortie standard.
+Écrit la matrice en Markdown dans --sortie (ou sur la sortie standard).
 """
 import argparse
 import json
 import os
 import sys
+from datetime import date
 
 REFERENTIEL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "referentiel.json")
 STATUT = {"couvert": "✅ couvert", "partiel": "🟠 partiel", "manquant": "❌ manquant"}
@@ -30,9 +32,30 @@ def indicateurs_applicables(ref, categories, conditions, date_audit):
 
 
 def statut(preuves):
-    if any(p.get("force") == "forte" for p in preuves):
+    preuves = [p for p in preuves if not p.get("introuvable")]
+    if any(str(p.get("force", "")).strip().lower() == "forte" for p in preuves):
         return "couvert"
     return "partiel" if preuves else "manquant"
+
+
+def charger_cartographie(chemin, ref):
+    """Lit et valide la cartographie ; marque les fichiers cités qui n'existent pas."""
+    try:
+        carto = json.load(open(chemin, encoding="utf-8-sig"))
+    except (OSError, json.JSONDecodeError) as e:
+        sys.exit(f"Cartographie illisible ({chemin}) : {e}")
+    if not isinstance(carto, dict):
+        sys.exit("Cartographie invalide : attendu un objet {\"1\": [ {\"fichier\": ...} ], ...}")
+    inconnues = sorted(set(carto) - {str(i["num"]) for i in ref["indicateurs"]})
+    if inconnues:
+        sys.exit(f"Clés inconnues dans la cartographie : {', '.join(inconnues)} (attendu : numéros d'indicateur, ex. \"1\" à \"33\")")
+    base = os.path.dirname(os.path.abspath(chemin))
+    for num, preuves in carto.items():
+        if not isinstance(preuves, list) or not all(isinstance(p, dict) and p.get("fichier") for p in preuves):
+            sys.exit(f"Indicateur {num} : attendu une liste de {{\"fichier\": ..., \"pourquoi\": ..., \"force\": ...}}")
+        for p in preuves:
+            p["introuvable"] = not os.path.exists(os.path.join(base, p["fichier"]))
+    return carto
 
 
 def construire(ref, carto, categories, conditions, date_audit, nouvel_entrant):
@@ -49,7 +72,9 @@ def construire(ref, carto, categories, conditions, date_audit, nouvel_entrant):
             notes.append("⚠️ Réforme 2026 : " + ind["evolution_2026"])
         if s != "couvert":
             notes.append("Preuves attendues : " + ", ".join(ind["preuves"]))
-        fichiers = "<br>".join(f"`{p['fichier']}` ({p.get('force', '?')})" for p in preuves) or "—"
+        fichiers = "<br>".join(
+            f"`{p['fichier']}` ({'⚠️ fichier introuvable' if p.get('introuvable') else p.get('force', '?')})"
+            for p in preuves).replace("|", "\\|") or "—"
         lignes.append(f"| {ind['num']} | {ind['critere']} | {ind['libelle']} | {STATUT[s]} | {fichiers} | {' '.join(notes)} |")
 
     total = sum(compte.values())
@@ -77,18 +102,30 @@ def main(argv=None):
     p.add_argument("--alternance", action="store_true")
     p.add_argument("--sous-traitance", action="store_true")
     p.add_argument("--nouvel-entrant", action="store_true")
+    p.add_argument("--sortie", help="fichier Markdown à écrire (sinon sortie standard)")
     a = p.parse_args(argv)
 
     ref = json.load(open(REFERENTIEL, encoding="utf-8"))
     categories = [c.strip().upper() for c in a.categories.split(",") if c.strip()]
     inconnues = set(categories) - set(ref["categories"])
-    if inconnues:
-        sys.exit(f"Catégories inconnues : {', '.join(sorted(inconnues))} (attendu : AF, BC, VAE, CFA)")
+    if inconnues or not categories:
+        sys.exit(f"Catégories inconnues ou absentes : {', '.join(sorted(inconnues))} (attendu : AF, BC, VAE, CFA)")
     conditions = {c for c, on in [("certification", a.certification), ("alternance", a.alternance),
                                   ("sous-traitance", a.sous_traitance)] if on}
-    carto = json.load(open(a.cartographie, encoding="utf-8"))
-    texte, _ = construire(ref, carto, categories, conditions, a.date_audit, a.nouvel_entrant)
-    print(texte)
+    try:
+        a.date_audit = date.fromisoformat(a.date_audit).isoformat()
+    except ValueError:
+        sys.exit(f"Date d'audit invalide : {a.date_audit} (format attendu AAAA-MM-JJ, ex. 2027-02-15)")
+    carto = charger_cartographie(a.cartographie, ref)
+    texte, compte = construire(ref, carto, categories, conditions, a.date_audit, a.nouvel_entrant)
+    if a.sortie:
+        with open(a.sortie, "w", encoding="utf-8") as f:
+            f.write(texte + "\n")
+        print(f"Matrice écrite : {a.sortie} ({sum(compte.values())} indicateurs applicables : "
+              f"{compte['couvert']} couverts, {compte['partiel']} partiels, {compte['manquant']} manquants)")
+    else:
+        sys.stdout.reconfigure(encoding="utf-8")  # sinon les emojis plantent sur une console Windows
+        print(texte)
 
 
 if __name__ == "__main__":

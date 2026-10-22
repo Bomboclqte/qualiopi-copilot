@@ -1,7 +1,7 @@
 ---
 type: regex
-pattern: "22 indicateurs applicables"
-target: {source: file, path: "matrice-preuves.md"}
+pattern: "Matrice .{1,8}crite : .*22 indicateurs applicables"
+target: trace
 weight: 2
 ---
-Formation seule, sans certification, alternance ni sous-traitance : 22 indicateurs applicables (tableau France compétences).
+La matrice est calculée par le script (pas à la main) et compte 22 indicateurs applicables : formation seule, sans certification, alternance ni sous-traitance (tableau France compétences).

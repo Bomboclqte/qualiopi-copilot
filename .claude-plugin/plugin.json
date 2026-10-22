@@ -1,6 +1,6 @@
 {
   "name": "qualiopi-copilot",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Prépare la certification Qualiopi d'un organisme de formation : range ses documents sous les 32/33 indicateurs, signale les preuves manquantes, prépare les modèles à compléter et simule un audit blanc.",
   "author": {
     "name": "Bomboclqte",

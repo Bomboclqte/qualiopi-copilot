@@ -35,7 +35,7 @@ Tu prépares les documents manquants **à partir de l'activité réelle** de l'o
 | 12 | Procédure de prévention des abandons ; depuis 2026, conduite à tenir en cas de violence, harcèlement ou discrimination |
 | 23 à 25 | Tableau de veille : source, date, information, action décidée |
 | 26 | Fiche référent handicap et annuaire des partenaires |
-| 30 | Questionnaires à chaud et à froid ; depuis 2026, inclure les financeurs |
+| 30 | Questionnaires à chaud et à froid, sans oublier les financeurs |
 | 31 | Procédure et registre des réclamations |
 | 32 | Registre d'amélioration : origine, action, responsable, date prévue, date réalisée ; depuis 2026, analyse des risques qualité |
 | 33 (CFA, 2026) | Évaluation des enseignements par les apprentis, distincte de la satisfaction |

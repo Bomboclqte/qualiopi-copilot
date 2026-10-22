@@ -3,7 +3,7 @@ name: audit-demo
 description: Audit blanc complet sur le faux organisme Bureautik Conseil (manques volontaires).
 tags: [e2e]
 context:
-  add_dirs: [dossier]
+  scaffold_script: fixture.sh
 execution:
   max_turns: 60
   timeout_seconds: 1200
