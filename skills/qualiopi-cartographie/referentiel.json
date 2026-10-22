@@ -1,0 +1,550 @@
+{
+  "_source": "Applicabilité par catégorie : Référentiel National Qualité publié par France compétences (tableau officiel, recoupé : 28 indicateurs AF, 22 BC, 24 VAE, 32 CFA). Nouveaux entrants (2, 3, 11, 13, 14, 19, 22, 24, 25, 26, 32) : guide de lecture v9 du 8 janvier 2024. Réforme : décret n° 2026-728 du 1er août 2026 (JORF du 4 août 2026), applicable au 1er novembre 2026, d'après la synthèse Certiforma de septembre 2026 ; arrêtés de seuils (indicateurs 19 et 20) et guide de lecture v10 non parus à la rédaction. Les preuves citées sont des exemples courants, pas une liste officielle : le guide de lecture en vigueur fait foi.",
+  "categories": {
+    "AF": "Actions de formation",
+    "BC": "Bilans de compétences",
+    "VAE": "Actions permettant de faire valider les acquis de l'expérience",
+    "CFA": "Actions de formation par apprentissage"
+  },
+  "conditions": {
+    "certification": "seulement si l'organisme prépare à une certification professionnelle",
+    "alternance": "seulement pour les formations en alternance",
+    "sous-traitance": "seulement si l'organisme sous-traite ou recourt au portage salarial"
+  },
+  "nouvel_entrant_note": "Nouvel entrant (première année d'activité, ou nouvelle catégorie d'actions) : à l'audit initial, le certificateur vérifie seulement la formalisation du processus ; la mise en œuvre effective est vérifiée à l'audit de surveillance.",
+  "date_reforme": "2026-11-01",
+  "criteres": {
+    "1": "Information du public sur les prestations, les délais d'accès et les résultats obtenus",
+    "2": "Identification précise des objectifs des prestations et adaptation aux publics",
+    "3": "Adaptation aux publics des modalités d'accueil, d'accompagnement, de suivi et d'évaluation",
+    "4": "Adéquation des moyens pédagogiques, techniques et d'encadrement",
+    "5": "Qualification et développement des compétences des personnels",
+    "6": "Inscription et investissement dans l'environnement professionnel",
+    "7": "Recueil et prise en compte des appréciations et des réclamations"
+  },
+  "indicateurs": [
+    {
+      "num": 1,
+      "critere": 1,
+      "libelle": "Information du public accessible, détaillée et vérifiable : prérequis, objectifs, durée, modalités et délais d'accès, tarifs, contacts, méthodes mobilisées, modalités d'évaluation, accessibilité aux personnes handicapées.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "site internet",
+        "catalogue",
+        "fiches programmes",
+        "plaquettes",
+        "devis types"
+      ],
+      "evolution_2026": "Aucune mention de nature à induire le public en erreur (conditions d'accès, contenu, modalités pédagogiques, financement, droits ou absence de droits de poursuite d'études)."
+    },
+    {
+      "num": 2,
+      "critere": 1,
+      "libelle": "Diffusion d'indicateurs de résultats adaptés à la nature des prestations et des publics.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "taux de satisfaction publiés",
+        "taux de réussite",
+        "taux d'abandon",
+        "date de mise à jour des chiffres"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 3,
+      "critere": 1,
+      "libelle": "Certification : taux d'obtention, possibilité de valider des blocs de compétences, équivalences, passerelles, suites de parcours et débouchés.",
+      "categories": [
+        "AF",
+        "VAE",
+        "CFA"
+      ],
+      "condition": "certification",
+      "preuves": [
+        "fiche France Compétences (RNCP/RS) liée",
+        "taux d'obtention publiés",
+        "page débouchés et passerelles"
+      ],
+      "nouvel_entrant": true,
+      "evolution_2026": "Ajout : « en particulier les poursuites d'études »."
+    },
+    {
+      "num": 4,
+      "critere": 2,
+      "libelle": "Analyse du besoin du bénéficiaire en lien avec l'entreprise et/ou le financeur concerné.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "questionnaire de recueil des besoins",
+        "comptes rendus d'entretien préalable",
+        "cahier des charges client"
+      ]
+    },
+    {
+      "num": 5,
+      "critere": 2,
+      "libelle": "Objectifs opérationnels et évaluables de la prestation.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "programmes avec objectifs formulés en verbes d'action",
+        "lien objectifs ↔ évaluations"
+      ]
+    },
+    {
+      "num": 6,
+      "critere": 2,
+      "libelle": "Contenus et modalités de mise en œuvre adaptés aux objectifs et aux publics.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "déroulés pédagogiques",
+        "scénarios de formation",
+        "adaptations par public"
+      ]
+    },
+    {
+      "num": 7,
+      "critere": 2,
+      "libelle": "Adéquation du contenu aux exigences de la certification visée.",
+      "categories": [
+        "AF",
+        "CFA"
+      ],
+      "condition": "certification",
+      "preuves": [
+        "tableau de correspondance programme ↔ référentiel de certification",
+        "convention avec le certificateur"
+      ],
+      "evolution_2026": "Le prestataire doit prouver sa capacité à assurer cette certification, y compris en qualité d'organisme habilité."
+    },
+    {
+      "num": 8,
+      "critere": 2,
+      "libelle": "Procédures de positionnement et d'évaluation des acquis à l'entrée.",
+      "categories": [
+        "AF",
+        "CFA"
+      ],
+      "preuves": [
+        "tests de positionnement",
+        "grilles d'entretien d'entrée",
+        "résultats exploités"
+      ]
+    },
+    {
+      "num": 9,
+      "critere": 3,
+      "libelle": "Information des publics sur les conditions de déroulement de la prestation.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "livret d'accueil",
+        "convocations",
+        "règlement intérieur"
+      ]
+    },
+    {
+      "num": 10,
+      "critere": 3,
+      "libelle": "Adaptation de la prestation, accompagnement et suivi des bénéficiaires.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "fiches de suivi",
+        "comptes rendus d'entretiens individuels",
+        "adaptations tracées"
+      ]
+    },
+    {
+      "num": 11,
+      "critere": 3,
+      "libelle": "Évaluation de l'atteinte des objectifs par les bénéficiaires.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "évaluations finales",
+        "grilles d'évaluation",
+        "attestations de fin de formation"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 12,
+      "critere": 3,
+      "libelle": "Mesures pour favoriser l'engagement des bénéficiaires et prévenir les ruptures de parcours.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "suivi d'assiduité",
+        "procédure de relance des absents",
+        "entretiens de raccrochage"
+      ],
+      "evolution_2026": "Ajout : prévention et traitement de toute situation de violence (dont violences sexistes et sexuelles), de harcèlement ou de discrimination pendant la formation."
+    },
+    {
+      "num": 13,
+      "critere": 3,
+      "libelle": "Alternance : coordination entre l'organisme, l'apprenant et l'entreprise.",
+      "categories": [
+        "AF",
+        "CFA"
+      ],
+      "condition": "alternance",
+      "preuves": [
+        "livret d'apprentissage",
+        "comptes rendus de visites en entreprise",
+        "échanges avec les tuteurs"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 14,
+      "critere": 3,
+      "libelle": "Apprentissage : accompagnement socio-professionnel, éducatif et relatif à l'exercice de la citoyenneté.",
+      "categories": [
+        "CFA"
+      ],
+      "preuves": [
+        "actions citoyenneté",
+        "accompagnement social (logement, transport, aides)"
+      ],
+      "nouvel_entrant": true,
+      "evolution_2026": "Traitement sans délai des ruptures liées à des difficultés, violences ou discriminations, en formation comme en entreprise ; information renforcée des apprentis (notamment mineurs) sur les dispositifs de signalement et le médiateur de l'apprentissage."
+    },
+    {
+      "num": 15,
+      "critere": 3,
+      "libelle": "Apprentissage : information des apprentis sur leurs droits et devoirs et sur les règles de santé et de sécurité.",
+      "categories": [
+        "CFA"
+      ],
+      "preuves": [
+        "livret d'accueil apprenti",
+        "émargement de la séance d'information"
+      ],
+      "evolution_2026": "Information renforcée sur les dispositifs de signalement et le médiateur de l'apprentissage."
+    },
+    {
+      "num": 16,
+      "critere": 3,
+      "libelle": "Certification : conditions de présentation des bénéficiaires conformes aux exigences du certificateur.",
+      "categories": [
+        "AF",
+        "VAE",
+        "CFA"
+      ],
+      "condition": "certification",
+      "preuves": [
+        "règlement d'examen du certificateur",
+        "procès-verbaux de jury",
+        "inscriptions aux sessions"
+      ]
+    },
+    {
+      "num": 17,
+      "critere": 4,
+      "libelle": "Moyens humains et techniques adaptés et environnement approprié.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "liste des salles et équipements",
+        "plateforme e-learning",
+        "organigramme"
+      ]
+    },
+    {
+      "num": 18,
+      "critere": 4,
+      "libelle": "Coordination des intervenants internes et/ou externes.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "réunions pédagogiques datées",
+        "planning des intervenants",
+        "comptes rendus"
+      ]
+    },
+    {
+      "num": 19,
+      "critere": 4,
+      "libelle": "Ressources pédagogiques mises à disposition des bénéficiaires.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "supports remis",
+        "accès à la plateforme",
+        "centre de ressources"
+      ],
+      "nouvel_entrant": true,
+      "evolution_2026": "Vérifier l'effectivité du suivi des modules à distance (les relevés de connexion ne suffisent plus : interactions, travaux corrigés, relances) ; référent pédagogique par formation au-delà d'un nombre d'intervenants fixé par arrêté (à paraître)."
+    },
+    {
+      "num": 20,
+      "critere": 4,
+      "libelle": "Apprentissage : personnels dédiés (référent handicap, mobilité nationale et internationale, médiation) et conseil de perfectionnement.",
+      "categories": [
+        "CFA"
+      ],
+      "preuves": [
+        "nominations des référents",
+        "comptes rendus du conseil de perfectionnement"
+      ],
+      "evolution_2026": "Pilotage et gouvernance participative associant apprentis, formateurs et entreprises ; supervision pédagogique renforcée sous un seuil d'intervenants permanents fixé par arrêté (à paraître)."
+    },
+    {
+      "num": 21,
+      "critere": 5,
+      "libelle": "Compétences des intervenants internes et externes adaptées aux prestations.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "CV des formateurs",
+        "diplômes et certifications",
+        "grille de recrutement"
+      ]
+    },
+    {
+      "num": 22,
+      "critere": 5,
+      "libelle": "Développement des compétences des salariés.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "plan de développement des compétences",
+        "attestations de formation des formateurs",
+        "entretiens professionnels"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 23,
+      "critere": 6,
+      "libelle": "Veille légale et réglementaire sur le champ de la formation et exploitation des enseignements.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "abonnements (Centre Inffo...)",
+        "tableau de veille",
+        "actions décidées suite à la veille"
+      ]
+    },
+    {
+      "num": 24,
+      "critere": 6,
+      "libelle": "Veille sur les évolutions des compétences, des métiers et des emplois.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "participation à des salons et réseaux professionnels",
+        "mises à jour de programmes justifiées"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 25,
+      "critere": 6,
+      "libelle": "Veille sur les innovations pédagogiques et technologiques.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "webinaires suivis",
+        "outils testés et adoptés"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 26,
+      "critere": 6,
+      "libelle": "Mobilisation de l'expertise, des outils et des réseaux pour accueillir les personnes en situation de handicap.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "référent handicap",
+        "partenariats (Agefiph, Cap emploi...)",
+        "adaptations réalisées"
+      ],
+      "nouvel_entrant": true
+    },
+    {
+      "num": 27,
+      "critere": 6,
+      "libelle": "Sous-traitance ou portage salarial : respect de la conformité au référentiel.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "condition": "sous-traitance",
+      "preuves": [
+        "contrats de sous-traitance",
+        "procédure de sélection et de contrôle des sous-traitants"
+      ],
+      "evolution_2026": "Traçabilité de la conformité dans les contrats de sous-traitance."
+    },
+    {
+      "num": 28,
+      "critere": 6,
+      "libelle": "Alternance : mobilisation des acteurs pour construire des situations de travail formatrices.",
+      "categories": [
+        "AF",
+        "CFA"
+      ],
+      "condition": "alternance",
+      "preuves": [
+        "partenariats entreprises",
+        "fiches de liaison",
+        "outils de suivi en entreprise"
+      ]
+    },
+    {
+      "num": 29,
+      "critere": 6,
+      "libelle": "Apprentissage : actions favorisant l'insertion professionnelle ou la poursuite d'études.",
+      "categories": [
+        "CFA"
+      ],
+      "preuves": [
+        "ateliers CV et entretiens",
+        "suivi de l'insertion à 6 mois"
+      ]
+    },
+    {
+      "num": 30,
+      "critere": 7,
+      "libelle": "Recueil des appréciations des parties prenantes (bénéficiaires, financeurs, équipes, entreprises).",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "questionnaires de satisfaction à chaud et à froid",
+        "analyse des résultats"
+      ],
+      "evolution_2026": "Les financeurs sont explicitement cités, le cas échéant."
+    },
+    {
+      "num": 31,
+      "critere": 7,
+      "libelle": "Traitement des difficultés, réclamations et aléas.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "procédure de réclamation",
+        "registre des réclamations avec réponses"
+      ]
+    },
+    {
+      "num": 32,
+      "critere": 7,
+      "libelle": "Mesures d'amélioration à partir de l'analyse des appréciations et des réclamations.",
+      "categories": [
+        "AF",
+        "BC",
+        "VAE",
+        "CFA"
+      ],
+      "preuves": [
+        "plan d'amélioration continue",
+        "registre réclamation → action → date de réalisation"
+      ],
+      "nouvel_entrant": true,
+      "evolution_2026": "Ajout d'une analyse des risques sur la qualité des formations délivrées (logique préventive)."
+    },
+    {
+      "num": 33,
+      "critere": 7,
+      "libelle": "Apprentissage : dispositif d'évaluation des contenus et des enseignements par les apprenants, distinct de la satisfaction générale, résultats partagés avec les équipes pédagogiques et démarche d'amélioration dont l'efficacité est mesurée.",
+      "categories": [
+        "CFA"
+      ],
+      "depuis": "2026-11-01",
+      "preuves": [
+        "questionnaire d'évaluation des enseignements",
+        "compte rendu de partage avec les formateurs",
+        "plan d'amélioration et sa mesure d'efficacité"
+      ]
+    }
+  ]
+}
