@@ -2,7 +2,8 @@
   "name": "qualiopi-copilot",
   "description": "Préparation à l'audit Qualiopi pour les organismes de formation",
   "owner": {
-    "name": "masseminoj"
+    "name": "Bomboclqte",
+    "url": "https://github.com/Bomboclqte"
   },
   "plugins": [
     {
@@ -10,7 +11,14 @@
       "description": "Range les documents d'un organisme de formation sous les indicateurs Qualiopi, signale les preuves manquantes, prépare les modèles à compléter et simule un audit blanc.",
       "source": "./",
       "category": "productivity",
-      "tags": ["qualiopi", "formation", "audit", "qualité", "conformité", "france"]
+      "tags": [
+        "qualiopi",
+        "formation",
+        "audit",
+        "qualité",
+        "conformité",
+        "france"
+      ]
     }
   ]
 }

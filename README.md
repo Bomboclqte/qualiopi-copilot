@@ -19,7 +19,7 @@ Il vous faut [Claude Code](https://claude.com/claude-code) (version 2.1.275 ou p
 Dans Claude Code, tapez :
 
 ```
-/plugin install qualiopi-copilot --marketplace VOTRE_COMPTE/qualiopi-copilot
+/plugin install qualiopi-copilot --marketplace Bomboclqte/qualiopi-copilot
 ```
 
 Redémarrez ensuite Claude Code.
@@ -53,7 +53,7 @@ Vous pouvez aussi parler naturellement : *« Où en est-on pour Qualiopi ? »*, 
 Le dépôt contient un faux organisme, « Bureautik Conseil », avec des manques volontaires. Pour l'essayer :
 
 ```bash
-git clone https://github.com/VOTRE_COMPTE/qualiopi-copilot
+git clone https://github.com/Bomboclqte/qualiopi-copilot
 cd qualiopi-copilot/exemple/organisme-demo
 claude --plugin-dir ../..
 ```
